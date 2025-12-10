@@ -1,40 +1,17 @@
-import * as fs from 'fs';
-import * as path from 'path';
-
-function loadEnv() {
-  const envPath = path.resolve(process.cwd(), '.env');
-  if (fs.existsSync(envPath)) {
-    const envContent = fs.readFileSync(envPath, 'utf-8');
-    envContent.split('\n').forEach((line) => {
-      const trimmedLine = line.trim();
-      if (!trimmedLine || trimmedLine.startsWith('#')) {
-        return;
-      }
-      const [key, ...values] = trimmedLine.split('=');
-      if (key && values.length > 0) {
-        const value = values.join('=').trim();
-        process.env[key.trim()] = value;
-      }
-    });
-  }
-  console.log('Loaded environment variables from .env');
-  console.log('VITE_SUPABASE_URL:', process.env.VITE_SUPABASE_URL ? 'Set' : 'Not set');
-  console.log('VITE_SUPABASE_ANON_KEY:', process.env.VITE_SUPABASE_ANON_KEY ? 'Set' : 'Not set');
-}
-
-loadEnv();
+/**
+ * DEMO/CASE STUDY VERSION
+ * Database seeding is disabled in the demo version.
+ * Mock data is provided directly in the src/lib/supabase.ts file.
+ */
 
 async function runSeed() {
-  console.log('🌱 Starting database seeding...\n');
-
-  const { seedBlogPosts } = await import('./src/lib/seedBlogPosts');
-  await seedBlogPosts();
-
-  console.log('\n✅ Seeding complete!');
+  console.log('🎭 DEMO MODE: Database seeding disabled');
+  console.log('📝 Mock data is provided in src/lib/supabase.ts');
+  console.log('✅ No seeding required for demo version');
   process.exit(0);
 }
 
 runSeed().catch((error) => {
-  console.error('❌ Seeding failed:', error);
+  console.error('❌ Error:', error);
   process.exit(1);
 });

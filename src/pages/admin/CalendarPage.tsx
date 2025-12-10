@@ -705,51 +705,9 @@ export function CalendarPage() {
 
     const dateStr = moment(selectedDay).format("YYYY-MM-DD");
 
-    // Helper function to send webhook
+    // DEMO MODE: Webhook disabled - no external connections
     const sendFreeDayWebhook = async () => {
-      const webhookUrl = "https://hook.eu1.make.com/jiin6fs7e8o8e8al3eiul7joargjqdsv";
-      const payload = {
-        date: dateStr
-      };
-
-      console.log("📤 Sending free day webhook:", payload);
-
-      try {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 10000);
-
-        const response = await fetch(webhookUrl, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-          signal: controller.signal
-        });
-
-        clearTimeout(timeoutId);
-
-        if (!response.ok) {
-          throw new Error(`Webhook failed with status ${response.status}`);
-        }
-
-        console.log("✅ Webhook sent successfully:", {
-          status: response.status,
-          date: dateStr
-        });
-
-        showToast("success", `📅 Webhook išsiųstas: ${dateStr}`);
-      } catch (webhookError: any) {
-        console.error("❌ Webhook error:", {
-          error: webhookError.message,
-          date: dateStr,
-          payload
-        });
-
-        if (webhookError.name === 'AbortError') {
-          showToast("warning", "⚠️ Webhook timeout - bandykite dar kartą");
-        } else {
-          showToast("warning", "⚠️ Webhook klaida - patikrinkite console");
-        }
-      }
+      console.log("[DEMO] Webhook disabled in demo mode, date:", dateStr);
     };
 
     // Step 1: Cancel all confirmed bookings for this date

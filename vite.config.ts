@@ -5,10 +5,9 @@ import { copyFileSync, existsSync, mkdirSync } from 'fs';
 export default defineConfig({
   envPrefix: 'VITE_',
 
-  define: {
-    'import.meta.env.VITE_SUPABASE_URL': JSON.stringify('https://wutgnceyggqygtfqtirb.supabase.co'),
-    'import.meta.env.VITE_SUPABASE_ANON_KEY': JSON.stringify('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind1dGduY2V5Z2dxeWd0ZnF0aXJiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1NTY0ODUsImV4cCI6MjA3ODEzMjQ4NX0.areTRdHixNt01aDtVguw_wNVxBbe3ADAQ7DzNo4HDzA')
-  },
+  // Supabase credentials removed for demo/case study version
+  // This version uses mock data and localStorage instead of a real database
+  define: {},
 
   plugins: [
     react(),
@@ -49,7 +48,7 @@ export default defineConfig({
           'date-vendor': ['date-fns', 'date-fns-tz'],
           'map-vendor': ['leaflet', 'react-leaflet'],
           'admin-vendor': ['react-big-calendar', 'moment'],
-          'supabase-vendor': ['@supabase/supabase-js'],
+          // supabase-vendor removed - using mock data instead
         },
         chunkFileNames: 'assets/[name]-[hash].js',
         entryFileNames: 'assets/[name]-[hash].js',
