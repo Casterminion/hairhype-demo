@@ -381,16 +381,20 @@ class MockQueryBuilder {
 
   private getData(): any[] {
     switch (this.tableName) {
+      // Static demo data - always return mock data directly (no localStorage)
       case 'services':
-        return getLocalData('services', MOCK_SERVICES);
+        return MOCK_SERVICES;
       case 'reviews':
-        return getLocalData('reviews', MOCK_REVIEWS);
+        return MOCK_REVIEWS;
       case 'posts':
-        return getLocalData('posts', MOCK_POSTS);
+        return MOCK_POSTS;
       case 'gallery_images':
-        return getLocalData('gallery_images', MOCK_GALLERY_IMAGES);
+        return MOCK_GALLERY_IMAGES;
       case 'working_hours':
-        return getLocalData('working_hours', MOCK_WORKING_HOURS);
+        return MOCK_WORKING_HOURS;
+      case 'settings':
+        return [MOCK_SETTINGS];
+      // User-generated data - use localStorage for demo interactions
       case 'bookings':
         return getLocalData('bookings', []);
       case 'customers':
@@ -401,8 +405,6 @@ class MockQueryBuilder {
         return getLocalData('post_likes', []);
       case 'date_overrides':
         return getLocalData('date_overrides', []);
-      case 'settings':
-        return [getLocalData('settings', MOCK_SETTINGS)];
       case 'booking_logs':
         return getLocalData('booking_logs', []);
       default:
