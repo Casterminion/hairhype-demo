@@ -116,6 +116,7 @@ const MOCK_POSTS = [
 </ul>
 <p>Laikydamiesi šių paprastų taisyklių, jūsų barzda visada atrodys puikiai!</p>`,
     featured_image: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80',
+    cover_image_url: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80',
     category: 'Patarimai',
     tags: ['barzda', 'priežiūra', 'patarimai'],
     is_published: true,
@@ -140,6 +141,7 @@ const MOCK_POSTS = [
 </ul>
 <p>Rinkitės stilių, kuris geriausiai atitinka jūsų gyvenimo būdą!</p>`,
     featured_image: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80',
+    cover_image_url: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80',
     category: 'Tendencijos',
     tags: ['tendencijos', 'mada', 'kirpimas'],
     is_published: true,
@@ -164,6 +166,7 @@ const MOCK_POSTS = [
 </ul>
 <p>Konsultuokitės su savo kirpėju - jis padės rasti geriausią variantą!</p>`,
     featured_image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80',
+    cover_image_url: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80',
     category: 'Patarimai',
     tags: ['patarimai', 'šukuosena', 'veido forma'],
     is_published: true,
@@ -187,6 +190,7 @@ const MOCK_POSTS = [
 <li>Reguliariai lankykitės pas kirpėją</li>
 </ul>`,
     featured_image: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80',
+    cover_image_url: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80',
     category: 'Patarimai',
     tags: ['plaukai', 'priežiūra', 'patarimai'],
     is_published: true,
@@ -204,6 +208,7 @@ const MOCK_GALLERY_IMAGES = [
     image_url: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=80',
     alt_text: 'Profesionalus barzdos tvarkymas',
     sort_order: 1,
+    is_active: true,
     created_at: '2024-11-01T10:00:00Z'
   },
   {
@@ -211,6 +216,7 @@ const MOCK_GALLERY_IMAGES = [
     image_url: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80',
     alt_text: 'Modernaus stiliaus kirpimas',
     sort_order: 2,
+    is_active: true,
     created_at: '2024-11-02T10:00:00Z'
   },
   {
@@ -218,6 +224,7 @@ const MOCK_GALLERY_IMAGES = [
     image_url: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80',
     alt_text: 'Klasikinis vyriškas kirpimas',
     sort_order: 3,
+    is_active: true,
     created_at: '2024-11-03T10:00:00Z'
   },
   {
@@ -225,6 +232,7 @@ const MOCK_GALLERY_IMAGES = [
     image_url: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80',
     alt_text: 'Fade kirpimo technika',
     sort_order: 4,
+    is_active: true,
     created_at: '2024-11-04T10:00:00Z'
   },
   {
@@ -232,6 +240,7 @@ const MOCK_GALLERY_IMAGES = [
     image_url: 'https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=600&q=80',
     alt_text: 'Barber shop aplinka',
     sort_order: 5,
+    is_active: true,
     created_at: '2024-11-05T10:00:00Z'
   },
   {
@@ -239,6 +248,7 @@ const MOCK_GALLERY_IMAGES = [
     image_url: 'https://images.unsplash.com/photo-1634302086887-13b5281d6f51?auto=format&fit=crop&w=600&q=80',
     alt_text: 'Plaukų stilizavimas',
     sort_order: 6,
+    is_active: true,
     created_at: '2024-11-06T10:00:00Z'
   },
   {
@@ -246,6 +256,7 @@ const MOCK_GALLERY_IMAGES = [
     image_url: 'https://images.unsplash.com/photo-1596728325488-58c87691e9af?auto=format&fit=crop&w=600&q=80',
     alt_text: 'Barzdos formavimas',
     sort_order: 7,
+    is_active: true,
     created_at: '2024-11-07T10:00:00Z'
   },
   {
@@ -253,6 +264,7 @@ const MOCK_GALLERY_IMAGES = [
     image_url: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&q=80',
     alt_text: 'Profesionali kirpykla',
     sort_order: 8,
+    is_active: true,
     created_at: '2024-11-08T10:00:00Z'
   }
 ];
