@@ -1,0 +1,1092 @@
+/**
+ * Admin Theme Styles - World Class Modern Design
+ * Ultra-premium light mode with perfect color theory
+ * Design Philosophy: Clean, Minimal, Purple Accent, Maximum Readability
+ */
+
+/* ===== CSS VARIABLE OVERRIDES FOR LIGHT MODE ===== */
+
+[data-admin-theme="light"] {
+  --ink: #FAFBFC;
+  --ink-2: #FFFFFF;
+  --navy: #FFFFFF;
+  --surface: #FAFBFC;
+  --surface-2: #F8FAFC;
+  --card: #FFFFFF;
+  --line: #E7E9EC;
+}
+
+/* ===== GLOBAL ADMIN THEME UTILITIES ===== */
+
+/* Cards - Dark Mode (ensure dark backgrounds stay dark) */
+[data-admin-theme="dark"] .bg-\[var\(--navy\)\],
+[data-admin-theme="dark"] .bg-\[\#0D1117\],
+[data-admin-theme="dark"] .bg-\[\#161B22\],
+[data-admin-theme="dark"] .bg-\[\#1C2128\],
+[data-admin-theme="dark"] .bg-\[\#0C0F15\],
+[data-admin-theme="dark"] .bg-\[\#0B0F16\],
+[data-admin-theme="dark"] .bg-\[\#10131A\],
+[data-admin-theme="dark"] .bg-\[\#141820\] {
+  background-color: #1C2128 !important;
+}
+
+/* Cards - Light Mode (pristine white with subtle elevation) */
+[data-admin-theme="light"] .bg-\[var\(--navy\)\],
+[data-admin-theme="light"] .bg-\[var\(--card\)\],
+[data-admin-theme="light"] .bg-\[\#0D1117\],
+[data-admin-theme="light"] .bg-\[\#161B22\],
+[data-admin-theme="light"] .bg-\[\#1C2128\],
+[data-admin-theme="light"] .bg-\[\#0C0F15\],
+[data-admin-theme="light"] .bg-\[\#0B0F16\],
+[data-admin-theme="light"] .bg-\[\#10131A\],
+[data-admin-theme="light"] .bg-\[\#141820\],
+[data-admin-theme="light"] .bg-black,
+[data-admin-theme="light"] .bg-gray-900,
+[data-admin-theme="light"] .bg-gray-800 {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Main Background - Dark Mode */
+[data-admin-theme="dark"] .bg-\[var\(--ink\)\],
+[data-admin-theme="dark"] .bg-\[var\(--ink-2\)\] {
+  background-color: #0D1117 !important;
+}
+
+/* Main Background - Light Mode (sophisticated neutral base) */
+[data-admin-theme="light"] .bg-\[var\(--ink\)\],
+[data-admin-theme="light"] .bg-\[var\(--ink-2\)\],
+[data-admin-theme="light"] .bg-\[var\(--surface\)\],
+[data-admin-theme="light"] .bg-\[var\(--surface-2\)\] {
+  background-color: #FAFBFC !important;
+}
+
+/* Borders in Light Mode (refined clean borders) */
+[data-admin-theme="light"] .border-white\/\[0\.06\],
+[data-admin-theme="light"] .border-white\/\[0\.08\],
+[data-admin-theme="light"] .border-white\/10,
+[data-admin-theme="light"] .border-white\/5,
+[data-admin-theme="light"] .border-white\/\[0\.04\],
+[data-admin-theme="light"] .border-black\/6,
+[data-admin-theme="light"] .border-black\/10,
+[data-admin-theme="light"] .border-black\/5,
+[data-admin-theme="light"] .border-black\/20 {
+  border-color: #E7E9EC !important;
+}
+
+[data-admin-theme="light"] .border-\[\#30363D\],
+[data-admin-theme="light"] .border-\[\#1E232D\],
+[data-admin-theme="light"] .border-black,
+[data-admin-theme="light"] .border-gray-900,
+[data-admin-theme="light"] .border-gray-800 {
+  border-color: #D6D9DD !important;
+}
+
+/* Dividers (elegant separation) */
+[data-admin-theme="light"] .divide-white\/\[0\.04\] > * + * {
+  border-color: #F0F2F4 !important;
+}
+
+/* Text Colors in Light Mode (perfect hierarchy) */
+/* CRITICAL: These must come AFTER Tailwind base styles to override */
+
+/* Specific opacity variants FIRST (more specific) */
+[data-admin-theme="light"] .text-white\/90,
+[data-admin-theme="light"] *[class~="text-white/90"] {
+  color: #1E293B !important; /* Slate 800 - Near-primary */
+}
+
+[data-admin-theme="light"] .text-white\/80,
+[data-admin-theme="light"] *[class~="text-white/80"] {
+  color: #334155 !important; /* Slate 700 - Strong secondary */
+}
+
+[data-admin-theme="light"] .text-white\/70,
+[data-admin-theme="light"] *[class~="text-white/70"] {
+  color: #475569 !important; /* Slate 600 - Secondary text */
+}
+
+[data-admin-theme="light"] .text-white\/60,
+[data-admin-theme="light"] *[class~="text-white/60"] {
+  color: #64748B !important; /* Slate 500 - Tertiary text */
+}
+
+[data-admin-theme="light"] .text-white\/50,
+[data-admin-theme="light"] *[class~="text-white/50"] {
+  color: #94A3B8 !important; /* Slate 400 - Muted text */
+}
+
+[data-admin-theme="light"] .text-white\/40,
+[data-admin-theme="light"] *[class~="text-white/40"] {
+  color: #CBD5E1 !important; /* Slate 300 - Subtle text */
+}
+
+[data-admin-theme="light"] .text-white\/30,
+[data-admin-theme="light"] *[class~="text-white/30"] {
+  color: #E2E8F0 !important; /* Slate 200 - Very subtle */
+}
+
+[data-admin-theme="light"] .text-white\/20,
+[data-admin-theme="light"] *[class~="text-white/20"] {
+  color: #F1F5F9 !important; /* Slate 100 - Ultra subtle */
+}
+
+/* Base text-white LAST (less specific, catches everything else) */
+[data-admin-theme="light"] .text-white,
+[data-admin-theme="light"] *[class~="text-white"] {
+  color: #0F172A !important; /* Slate 900 - Premium dark text */
+}
+
+/* Text using CSS variables */
+[data-admin-theme="light"] .text-\[var\(--ink\)\] {
+  color: #0F172A !important; /* Ensure --ink variable text is dark */
+}
+
+/* Placeholder Text */
+[data-admin-theme="light"] .placeholder-white\/40::placeholder {
+  color: #94A3B8 !important; /* Slate 400 */
+}
+
+/* Input Fields (clean white with refined borders) */
+[data-admin-theme="light"] .bg-white\/5,
+[data-admin-theme="light"] .bg-white\/10,
+[data-admin-theme="light"] .bg-\[\#161B22\] {
+  background-color: #FFFFFF !important;
+}
+
+[data-admin-theme="light"] input,
+[data-admin-theme="light"] textarea,
+[data-admin-theme="light"] select {
+  color: #0F172A !important;
+  background-color: #FFFFFF !important;
+  border-color: #D1D5DB !important;
+}
+
+[data-admin-theme="light"] input:hover,
+[data-admin-theme="light"] textarea:hover,
+[data-admin-theme="light"] select:hover {
+  border-color: #94A3B8 !important;
+}
+
+[data-admin-theme="light"] input:focus,
+[data-admin-theme="light"] textarea:focus,
+[data-admin-theme="light"] select:focus {
+  border-color: #0891B2 !important;
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1) !important;
+}
+
+[data-admin-theme="light"] input::placeholder,
+[data-admin-theme="light"] textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+/* Hover States (sophisticated feedback) */
+[data-admin-theme="light"] .hover\:bg-white\/\[0\.02\]:hover,
+[data-admin-theme="light"] .hover\:bg-white\/5:hover,
+[data-admin-theme="light"] .hover\:bg-white\/10:hover {
+  background-color: #F8FAFC !important; /* Slate 50 */
+  transition: background-color 150ms ease-in-out !important;
+}
+
+[data-admin-theme="light"] .active\:bg-white\/\[0\.04\]:active,
+[data-admin-theme="light"] .active\:bg-white\/\[0\.15\]:active {
+  background-color: #F1F5F9 !important; /* Slate 100 */
+  transition: background-color 50ms ease-in-out !important;
+}
+
+/* Button hover states */
+[data-admin-theme="light"] button:hover {
+  transition: all 150ms ease-in-out !important;
+}
+
+[data-admin-theme="light"] .admin-button-secondary:hover {
+  border-color: #0891B2 !important;
+  color: #0891B2 !important;
+}
+
+/* Table Headers */
+[data-admin-theme="light"] .bg-white\/\[0\.02\] {
+  background-color: #F8FAFC !important;
+}
+
+/* Background Gradients */
+[data-admin-theme="light"] .bg-gradient-to-br.from-\[\#0D1117\],
+[data-admin-theme="light"] .bg-gradient-to-br.from-\[\#1C2128\] {
+  --tw-gradient-from: #FFFFFF !important;
+  --tw-gradient-to: #F8FAFC !important;
+}
+
+[data-admin-theme="light"] .bg-gradient-to-br.to-\[\#161B22\],
+[data-admin-theme="light"] .bg-gradient-to-br.to-\[\#1C2128\] {
+  --tw-gradient-to: #F8FAFC !important;
+}
+
+/* ===== TEAL ACCENT SYSTEM (Professional & Fresh) ===== */
+
+/* Icon & Accent Backgrounds - Teal */
+[data-admin-theme="light"] .bg-\[var\(--gold\)\/10\] {
+  background-color: rgba(8, 145, 178, 0.08) !important; /* Cyan-600 with 8% opacity */
+}
+
+[data-admin-theme="light"] .border-\[var\(--gold\)\/20\],
+[data-admin-theme="light"] .border-\[var\(--gold\)\/40\] {
+  border-color: rgba(8, 145, 178, 0.20) !important;
+}
+
+[data-admin-theme="light"] .text-\[var\(--gold\)\],
+[data-admin-theme="light"] .text-\[\#B58E4C\],
+[data-admin-theme="light"] .text-\[\#E9CFA1\] {
+  color: #0891B2 !important; /* Cyan-600 - WCAG AA 4.57:1 */
+}
+
+/* Teal hover states */
+[data-admin-theme="light"] .hover\:text-\[var\(--gold\)\]:hover {
+  color: #0E7490 !important; /* Cyan-700 - Darker on hover */
+}
+
+/* Teal backgrounds for active states */
+[data-admin-theme="light"] .bg-\[\#B58E4C\],
+[data-admin-theme="light"] .bg-\[var\(--gold\)\] {
+  background-color: #0891B2 !important;
+}
+
+[data-admin-theme="light"] .hover\:bg-\[\#B58E4C\]:hover,
+[data-admin-theme="light"] .hover\:bg-\[var\(--gold\)\]:hover {
+  background-color: #0E7490 !important;
+}
+
+/* Skeleton Loaders */
+[data-admin-theme="light"] [class*="skeleton"] {
+  background-color: #F1F5F9 !important;
+}
+
+/* ===== SHEET/MODAL CONTENT FIX (CRITICAL) ===== */
+/* Force all text in sheet content to be dark in light mode */
+[data-admin-theme="light"] .admin-sheet-content,
+[data-admin-theme="light"] .admin-sheet-content * {
+  color: #0F172A !important;
+}
+
+[data-admin-theme="light"] .admin-sheet-content .text-sm {
+  color: #475569 !important;
+}
+
+[data-admin-theme="light"] .admin-sheet-content .text-xs {
+  color: #64748B !important;
+}
+
+[data-admin-theme="light"] .admin-sheet-content .text-lg {
+  color: #0F172A !important;
+}
+
+[data-admin-theme="light"] .admin-sheet-content .font-semibold,
+[data-admin-theme="light"] .admin-sheet-content .font-medium {
+  color: #0F172A !important;
+}
+
+/* Icons in sheet */
+[data-admin-theme="light"] .admin-sheet-content svg {
+  color: #0891B2 !important;
+}
+
+/* Override any inline styles */
+[data-admin-theme="light"] .admin-sheet-content [style*="color"] {
+  color: #0F172A !important;
+}
+
+/* ===== STATUS COLORS (Semantic, Accessible) ===== */
+
+[data-admin-theme="light"] .bg-emerald-500\/10 {
+  background-color: rgba(16, 185, 129, 0.10) !important;
+}
+
+[data-admin-theme="light"] .text-emerald-400 {
+  color: #059669 !important; /* Emerald 600 - WCAG AA */
+}
+
+[data-admin-theme="light"] .text-green-400 {
+  color: #16A34A !important; /* Green 600 - WCAG AA */
+}
+
+[data-admin-theme="light"] .text-blue-400 {
+  color: #2563EB !important; /* Blue 600 - WCAG AA */
+}
+
+[data-admin-theme="light"] .text-red-400 {
+  color: #DC2626 !important; /* Red 600 - WCAG AA */
+}
+
+[data-admin-theme="light"] .text-amber-400 {
+  color: #D97706 !important; /* Amber 600 - WCAG AA */
+}
+
+[data-admin-theme="light"] .fill-amber-400 {
+  fill: #D97706 !important;
+}
+
+[data-admin-theme="light"] .text-cyan-400,
+[data-admin-theme="light"] .text-cyan-300 {
+  color: #0891B2 !important; /* Cyan 600 - WCAG AA */
+}
+
+/* ===== SHADOWS (Premium Elevation) ===== */
+
+[data-admin-theme="light"] .shadow-lg,
+[data-admin-theme="light"] .shadow-2xl,
+[data-admin-theme="light"] .shadow-\[var\(--shadow-high\)\],
+[data-admin-theme="light"] .shadow-\[var\(--shadow-med\)\],
+[data-admin-theme="light"] .shadow-\[var\(--shadow-low\)\] {
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.02),
+    0 4px 8px -2px rgba(0, 0, 0, 0.05),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-admin-theme="light"] .shadow-sm {
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.02),
+    0 1px 2px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-admin-theme="light"] .shadow-md {
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.02),
+    0 2px 4px -1px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Modal & Sheet Backgrounds */
+[data-admin-theme="light"] .backdrop-blur-sm,
+[data-admin-theme="light"] .backdrop-blur-md,
+[data-admin-theme="light"] .backdrop-blur-lg,
+[data-admin-theme="light"] .backdrop-blur-xl {
+  backdrop-filter: blur(8px) !important;
+}
+
+/* ===== CALENDAR COMPONENT ===== */
+
+[data-admin-theme="light"] .rbc-calendar {
+  color: #0F172A !important;
+}
+
+[data-admin-theme="light"] .rbc-header {
+  color: #64748B !important;
+  border-bottom-color: #E7E9EC !important;
+  font-weight: 600 !important;
+}
+
+[data-admin-theme="light"] .rbc-day-bg,
+[data-admin-theme="light"] .rbc-time-slot,
+[data-admin-theme="light"] .rbc-month-row {
+  border-color: #F0F2F4 !important;
+}
+
+[data-admin-theme="light"] .rbc-time-view,
+[data-admin-theme="light"] .rbc-month-view {
+  background: #FFFFFF !important;
+}
+
+[data-admin-theme="light"] .rbc-today {
+  background: rgba(99, 102, 241, 0.06) !important; /* Purple tint for today */
+}
+
+[data-admin-theme="light"] .rbc-off-range {
+  color: #CBD5E1 !important;
+}
+
+[data-admin-theme="light"] .rbc-off-range-bg {
+  background: #F8FAFC !important;
+}
+
+[data-admin-theme="light"] .rbc-current-time-indicator {
+  background-color: #6366F1 !important;
+}
+
+/* ===== BUTTONS & INTERACTIVE ELEMENTS (PREMIUM COLOR THEORY) ===== */
+
+/* Base Button Styles - Light Mode */
+[data-admin-theme="light"] .admin-button {
+  font-weight: 500 !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* PRIMARY BUTTONS - Vibrant Indigo with Perfect Depth */
+[data-admin-theme="light"] .admin-button-primary {
+  background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(99, 102, 241, 0.2) !important;
+  box-shadow:
+    0 0 0 1px rgba(99, 102, 241, 0.08),
+    0 2px 4px -1px rgba(99, 102, 241, 0.25),
+    0 1px 2px rgba(0, 0, 0, 0.05) !important;
+  font-weight: 600 !important;
+}
+
+[data-admin-theme="light"] .admin-button-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #4F46E5 0%, #4338CA 100%) !important;
+  border-color: rgba(79, 70, 229, 0.3) !important;
+  box-shadow:
+    0 0 0 1px rgba(99, 102, 241, 0.12),
+    0 4px 12px -2px rgba(99, 102, 241, 0.35),
+    0 2px 4px -1px rgba(99, 102, 241, 0.2) !important;
+  transform: translateY(-1px) !important;
+}
+
+[data-admin-theme="light"] .admin-button-primary:active:not(:disabled) {
+  background: linear-gradient(135deg, #4338CA 0%, #3730A3 100%) !important;
+  transform: translateY(0) !important;
+  box-shadow:
+    0 0 0 1px rgba(67, 56, 202, 0.15),
+    0 1px 2px rgba(99, 102, 241, 0.3) !important;
+}
+
+/* SECONDARY BUTTONS - Clean Outline with Sophisticated Contrast */
+[data-admin-theme="light"] .admin-button-secondary {
+  background: #FFFFFF !important;
+  border: 1.5px solid #D6D9DD !important;
+  color: #475569 !important;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.01),
+    0 1px 2px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-admin-theme="light"] .admin-button-secondary:hover:not(:disabled) {
+  background: #F8FAFC !important;
+  border-color: #94A3B8 !important;
+  color: #334155 !important;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.02),
+    0 2px 4px -1px rgba(0, 0, 0, 0.08) !important;
+  transform: translateY(-1px) !important;
+}
+
+[data-admin-theme="light"] .admin-button-secondary:active:not(:disabled) {
+  background: #F1F5F9 !important;
+  border-color: #64748B !important;
+  transform: translateY(0) !important;
+}
+
+/* SUBTLE BUTTONS - Minimal Ghost Style with Clear Affordance */
+[data-admin-theme="light"] .admin-button-subtle {
+  background: transparent !important;
+  color: #64748B !important;
+  border: 1px solid transparent !important;
+}
+
+[data-admin-theme="light"] .admin-button-subtle:hover:not(:disabled) {
+  background: #F8FAFC !important;
+  color: #334155 !important;
+  border-color: #E7E9EC !important;
+}
+
+[data-admin-theme="light"] .admin-button-subtle:active:not(:disabled) {
+  background: #F1F5F9 !important;
+  color: #1E293B !important;
+}
+
+/* DANGER BUTTONS - Clear Warning Affordance with Red Accent */
+[data-admin-theme="light"] .admin-button-danger {
+  background: rgba(220, 38, 38, 0.06) !important;
+  border: 1.5px solid rgba(220, 38, 38, 0.25) !important;
+  color: #DC2626 !important;
+  box-shadow: 0 1px 2px rgba(220, 38, 38, 0.05) !important;
+}
+
+[data-admin-theme="light"] .admin-button-danger:hover:not(:disabled) {
+  background: rgba(220, 38, 38, 0.12) !important;
+  border-color: rgba(220, 38, 38, 0.35) !important;
+  color: #B91C1C !important;
+  box-shadow: 0 2px 4px -1px rgba(220, 38, 38, 0.15) !important;
+  transform: translateY(-1px) !important;
+}
+
+[data-admin-theme="light"] .admin-button-danger:active:not(:disabled) {
+  background: rgba(220, 38, 38, 0.18) !important;
+  border-color: rgba(220, 38, 38, 0.40) !important;
+  transform: translateY(0) !important;
+}
+
+/* DISABLED BUTTON STATE - Clear Visual Feedback */
+[data-admin-theme="light"] .admin-button:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+/* FOCUS STATES - Premium Accessibility */
+[data-admin-theme="light"] .admin-button-primary:focus-visible {
+  outline: none !important;
+  ring: 2px !important;
+  ring-color: rgba(99, 102, 241, 0.4) !important;
+  ring-offset: 2px !important;
+}
+
+[data-admin-theme="light"] .admin-button-secondary:focus-visible,
+[data-admin-theme="light"] .admin-button-subtle:focus-visible {
+  outline: none !important;
+  ring: 2px !important;
+  ring-color: rgba(100, 116, 139, 0.3) !important;
+  ring-offset: 2px !important;
+}
+
+[data-admin-theme="light"] .admin-button-danger:focus-visible {
+  outline: none !important;
+  ring: 2px !important;
+  ring-color: rgba(220, 38, 38, 0.3) !important;
+  ring-offset: 2px !important;
+}
+
+/* LEGACY BUTTON OVERRIDES - Backwards Compatibility */
+[data-admin-theme="light"] button.border-white\/10 {
+  border-color: #D6D9DD !important;
+}
+
+[data-admin-theme="light"] button.text-white\/70:not(:hover) {
+  color: #64748B !important;
+}
+
+[data-admin-theme="light"] button:hover.text-white {
+  color: #334155 !important;
+}
+
+[data-admin-theme="light"] button.bg-\[var\(--gold\)\],
+[data-admin-theme="light"] button.bg-\[\#B58E4C\] {
+  background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(99, 102, 241, 0.2) !important;
+  font-weight: 600 !important;
+}
+
+[data-admin-theme="light"] button.bg-\[var\(--gold\)\]:hover,
+[data-admin-theme="light"] button.bg-\[\#B58E4C\]:hover {
+  background: linear-gradient(135deg, #4F46E5 0%, #4338CA 100%) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px -2px rgba(99, 102, 241, 0.35) !important;
+}
+
+[data-admin-theme="light"] button.bg-\[var\(--gold\)\]:active,
+[data-admin-theme="light"] button.bg-\[\#B58E4C\]:active {
+  transform: translateY(0) !important;
+  background: linear-gradient(135deg, #4338CA 0%, #3730A3 100%) !important;
+}
+
+/* ===== CUSTOM INLINE BUTTONS (Edit/Delete on Cards) ===== */
+
+/* Icon buttons with bg-[#0D1117]/90 backdrop */
+[data-admin-theme="light"] button.bg-\[\#0D1117\]\/90 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #D6D9DD !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+/* Generic icon button overrides */
+[data-admin-theme="light"] button[class*="bg-[#0D1117]"] {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #D6D9DD !important;
+}
+
+/* Icon colors inside buttons */
+[data-admin-theme="light"] button .text-white {
+  color: #475569 !important;
+}
+
+/* Edit button hover states */
+[data-admin-theme="light"] button.hover\:bg-\[\#B58E4C\]\/20:hover,
+[data-admin-theme="light"] button[class*="hover:bg-[#B58E4C]"]:hover {
+  background-color: rgba(99, 102, 241, 0.15) !important;
+  border-color: rgba(99, 102, 241, 0.35) !important;
+}
+
+[data-admin-theme="light"] button.hover\:border-\[\#B58E4C\]\/40:hover,
+[data-admin-theme="light"] button[class*="hover:border-[#B58E4C]"]:hover {
+  border-color: rgba(99, 102, 241, 0.35) !important;
+}
+
+[data-admin-theme="light"] button[class*="hover:bg-[#B58E4C]"]:hover .text-white {
+  color: #4F46E5 !important;
+}
+
+/* Delete button hover states */
+[data-admin-theme="light"] button.hover\:bg-red-500\/20:hover,
+[data-admin-theme="light"] button[class*="hover:bg-red-500"]:hover {
+  background-color: rgba(220, 38, 38, 0.15) !important;
+  border-color: rgba(220, 38, 38, 0.35) !important;
+}
+
+[data-admin-theme="light"] button.hover\:border-red-500\/40:hover,
+[data-admin-theme="light"] button[class*="hover:border-red-500"]:hover {
+  border-color: rgba(220, 38, 38, 0.35) !important;
+}
+
+[data-admin-theme="light"] button[class*="hover:bg-red-500"]:hover .text-white {
+  color: #DC2626 !important;
+}
+
+/* Gallery delete button with gradient backgrounds */
+[data-admin-theme="light"] button.from-red-500\/10 {
+  background: rgba(220, 38, 38, 0.06) !important;
+}
+
+[data-admin-theme="light"] button.to-red-600\/10 {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.06), rgba(185, 28, 28, 0.08)) !important;
+}
+
+[data-admin-theme="light"] button.hover\:from-red-500\/20:hover {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.12), rgba(185, 28, 28, 0.14)) !important;
+}
+
+[data-admin-theme="light"] button[class*="from-red-50"] {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.06), rgba(185, 28, 28, 0.08)) !important;
+}
+
+[data-admin-theme="light"] button[class*="from-red-50"]:hover {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.12), rgba(185, 28, 28, 0.14)) !important;
+}
+
+/* Search Icon Color */
+[data-admin-theme="light"] .text-white\/40 svg {
+  color: #94A3B8 !important;
+}
+
+/* Progress bars & charts */
+[data-admin-theme="light"] .bg-white\/\[0\.04\] {
+  background-color: #F1F5F9 !important;
+}
+
+/* ===== STAR RATING BARS (Reviews Page) ===== */
+
+/* Star rating bar backgrounds */
+[data-admin-theme="light"] .bg-white\/5 {
+  background-color: #E7E9EC !important;
+}
+
+/* Star rating bar borders */
+[data-admin-theme="light"] .border-white\/5 {
+  border-color: #D6D9DD !important;
+}
+
+[data-admin-theme="light"] .border-white\/10 {
+  border-color: #CBD5E1 !important;
+}
+
+/* Star rating bar hover states */
+[data-admin-theme="light"] .hover\:border-white\/10:hover {
+  border-color: #CBD5E1 !important;
+}
+
+/* Selected rating bar backgrounds */
+[data-admin-theme="light"] .bg-white\/10 {
+  background-color: rgba(99, 102, 241, 0.08) !important;
+}
+
+/* Ring for selected rating */
+[data-admin-theme="light"] .ring-\[\#9333EA\]\/60 {
+  --tw-ring-color: rgba(99, 102, 241, 0.4) !important;
+}
+
+/* Shadow for selected rating */
+[data-admin-theme="light"] .shadow-\[\#9333EA\]\/20 {
+  --tw-shadow-color: rgba(99, 102, 241, 0.15) !important;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+/* Star colors in rating bars */
+[data-admin-theme="light"] .text-\[\#9333EA\] {
+  color: #6366F1 !important;
+}
+
+[data-admin-theme="light"] .fill-\[\#9333EA\] {
+  fill: #6366F1 !important;
+}
+
+[data-admin-theme="light"] .border-\[\#9333EA\]\/40 {
+  border-color: rgba(99, 102, 241, 0.3) !important;
+}
+
+/* Gradient bar color classes - Enhanced visibility in light mode */
+[data-admin-theme="light"] .from-emerald-500 {
+  --tw-gradient-from: #10B981 !important;
+  --tw-gradient-to: rgb(16 185 129 / 0) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+[data-admin-theme="light"] .to-emerald-600 {
+  --tw-gradient-to: #059669 !important;
+}
+
+[data-admin-theme="light"] .from-green-500 {
+  --tw-gradient-from: #22C55E !important;
+  --tw-gradient-to: rgb(34 197 94 / 0) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+[data-admin-theme="light"] .to-green-600 {
+  --tw-gradient-to: #16A34A !important;
+}
+
+[data-admin-theme="light"] .from-yellow-500 {
+  --tw-gradient-from: #EAB308 !important;
+  --tw-gradient-to: rgb(234 179 8 / 0) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+[data-admin-theme="light"] .to-yellow-600 {
+  --tw-gradient-to: #CA8A04 !important;
+}
+
+[data-admin-theme="light"] .from-orange-500 {
+  --tw-gradient-from: #F97316 !important;
+  --tw-gradient-to: rgb(249 115 22 / 0) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+[data-admin-theme="light"] .to-orange-600 {
+  --tw-gradient-to: #EA580C !important;
+}
+
+[data-admin-theme="light"] .from-red-500 {
+  --tw-gradient-from: #EF4444 !important;
+  --tw-gradient-to: rgb(239 68 68 / 0) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+[data-admin-theme="light"] .to-red-600 {
+  --tw-gradient-to: #DC2626 !important;
+}
+
+/* ===== CALENDAR WORKING HOURS MODAL TEXT & INPUTS ===== */
+
+/* CRITICAL: Override ALL white text inside Sheet drawers in light mode */
+[data-admin-theme="light"] .admin-sheet-content .text-white,
+[data-admin-theme="light"] .admin-sheet-content .text-white\/90 {
+  color: #0F172A !important;
+}
+
+[data-admin-theme="light"] .admin-sheet-content .text-white\/80 {
+  color: #1E293B !important;
+}
+
+[data-admin-theme="light"] .admin-sheet-content .text-white\/70 {
+  color: #475569 !important;
+}
+
+[data-admin-theme="light"] .admin-sheet-content .text-white\/60 {
+  color: #64748B !important;
+}
+
+[data-admin-theme="light"] .admin-sheet-content .text-white\/50 {
+  color: #94A3B8 !important;
+}
+
+[data-admin-theme="light"] .admin-sheet-content .text-white\/40 {
+  color: #CBD5E1 !important;
+}
+
+/* CRITICAL: text-slate-* colors must be visible in light mode */
+[data-admin-theme="light"] .admin-sheet-content .text-slate-900 {
+  color: #0F172A !important;
+}
+
+[data-admin-theme="light"] .admin-sheet-content .text-slate-800 {
+  color: #1E293B !important;
+}
+
+[data-admin-theme="light"] .admin-sheet-content .text-slate-700 {
+  color: #334155 !important;
+}
+
+[data-admin-theme="light"] .admin-sheet-content .text-slate-600 {
+  color: #475569 !important;
+}
+
+[data-admin-theme="light"] .admin-sheet-content .text-slate-500 {
+  color: #64748B !important;
+}
+
+/* Label text in working hours section */
+[data-admin-theme="light"] .admin-sheet-content label {
+  color: #334155 !important;
+}
+
+[data-admin-theme="light"] .admin-sheet-content span {
+  color: #1E293B !important;
+}
+
+/* Paragraph text */
+[data-admin-theme="light"] .admin-sheet-content p {
+  color: #1E293B !important;
+}
+
+/* Heading text */
+[data-admin-theme="light"] .admin-sheet-content h2,
+[data-admin-theme="light"] .admin-sheet-content h3 {
+  color: #0F172A !important;
+}
+
+/* Time and date input field text */
+[data-admin-theme="light"] input[type="time"].text-white,
+[data-admin-theme="light"] input[type="date"].text-white {
+  color: #1E293B !important;
+}
+
+/* Input backgrounds for working hours */
+[data-admin-theme="light"] input.bg-white\/5 {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+}
+
+/* Working hours info box background */
+[data-admin-theme="light"] .bg-white\/5.rounded-xl {
+  background-color: #F8FAFC !important;
+}
+
+/* Border for info box */
+[data-admin-theme="light"] .border-white\/10.rounded-xl {
+  border-color: #E2E8F0 !important;
+}
+
+/* Time picker calendar icons */
+[data-admin-theme="light"] input[type="time"]::-webkit-calendar-picker-indicator,
+[data-admin-theme="light"] input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.5) sepia(0) saturate(0) hue-rotate(0deg);
+  opacity: 0.6;
+}
+
+/* NUCLEAR OPTION: Override ALL inline styles in sheet content in light mode */
+[data-admin-theme="light"] .admin-sheet-content p[style],
+[data-admin-theme="light"] .admin-sheet-content span[style],
+[data-admin-theme="light"] .admin-sheet-content label[style],
+[data-admin-theme="light"] .admin-sheet-content div[style] {
+  color: #0F172A !important;
+}
+
+[data-admin-theme="light"] .admin-sheet-content .text-sm[style] {
+  color: #475569 !important;
+}
+
+[data-admin-theme="light"] .admin-sheet-content .text-lg[style] {
+  color: #0F172A !important;
+}
+
+[data-admin-theme="light"] .admin-sheet-content .font-semibold[style] {
+  color: #0F172A !important;
+}
+
+[data-admin-theme="light"] .admin-sheet-content .font-medium[style] {
+  color: #334155 !important;
+}
+
+/* Reschedule modal specific inputs */
+[data-admin-theme="light"] input.bg-\[\#141820\] {
+  background-color: #FFFFFF !important;
+}
+
+[data-admin-theme="light"] input.border-\[\#1E232D\] {
+  border-color: #CBD5E1 !important;
+}
+
+/* ===== FORM ELEMENTS (Premium Focus States) ===== */
+
+[data-admin-theme="light"] input:focus,
+[data-admin-theme="light"] textarea:focus,
+[data-admin-theme="light"] select:focus {
+  border-color: #6366F1 !important;
+  box-shadow:
+    0 0 0 1px #6366F1,
+    0 0 0 4px rgba(99, 102, 241, 0.10) !important;
+  outline: none !important;
+}
+
+/* ===== DANGER/ERROR ELEMENTS ===== */
+
+[data-admin-theme="light"] .bg-red-500\/10 {
+  background-color: rgba(220, 38, 38, 0.08) !important;
+}
+
+[data-admin-theme="light"] .bg-red-50 {
+  background-color: rgba(220, 38, 38, 0.04) !important;
+}
+
+[data-admin-theme="light"] .text-red-600,
+[data-admin-theme="light"] .text-red-400 {
+  color: #DC2626 !important;
+}
+
+[data-admin-theme="light"] .border-red-500\/20,
+[data-admin-theme="light"] .border-red-500\/40 {
+  border-color: rgba(220, 38, 38, 0.20) !important;
+}
+
+/* ===== SUCCESS ELEMENTS ===== */
+
+[data-admin-theme="light"] .border-green-500\/20 {
+  border-color: rgba(22, 163, 74, 0.20) !important;
+}
+
+[data-admin-theme="light"] .bg-green-500\/10 {
+  background-color: rgba(22, 163, 74, 0.08) !important;
+}
+
+/* ===== ICONS & EMPTY STATES ===== */
+
+[data-admin-theme="light"] .text-white\/60 svg {
+  color: #94A3B8 !important;
+}
+
+/* ===== NAVIGATION (Active State with Purple) ===== */
+
+[data-admin-theme="light"] [class*="bg-"][class*="gold"] {
+  background-color: rgba(99, 102, 241, 0.08) !important;
+}
+
+/* ===== DROPDOWNS ===== */
+
+[data-admin-theme="light"] option {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+}
+
+/* ===== PREMIUM CARD STYLES ===== */
+
+[data-admin-theme="light"] .card-premium {
+  background: #FFFFFF;
+  border: 1px solid #E7E9EC;
+  border-radius: 12px;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.02),
+    0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  transition: all 240ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-admin-theme="light"] .card-premium:hover {
+  border-color: #D6D9DD;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.02),
+    0 4px 8px -2px rgba(0, 0, 0, 0.08),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+/* ===== STAT BADGES ===== */
+
+[data-admin-theme="light"] .stat-badge-purple {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(99, 102, 241, 0.12) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  color: #6366F1;
+}
+
+/* ===== SCROLLBAR STYLING ===== */
+
+[data-admin-theme="light"] ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+[data-admin-theme="light"] ::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+
+[data-admin-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+[data-admin-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* ===== SELECTION HIGHLIGHT ===== */
+
+[data-admin-theme="light"] ::selection {
+  background: rgba(99, 102, 241, 0.20);
+  color: #0F172A;
+}
+
+/* ===== FOCUS VISIBLE (Accessibility) ===== */
+
+[data-admin-theme="light"] *:focus-visible {
+  outline: 2px solid #6366F1 !important;
+  outline-offset: 2px !important;
+}
+
+/* ===== LINK STYLES ===== */
+
+[data-admin-theme="light"] a {
+  color: #6366F1;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+[data-admin-theme="light"] a:hover {
+  color: #4F46E5;
+  text-decoration: underline;
+  text-decoration-color: rgba(99, 102, 241, 0.3);
+  text-underline-offset: 2px;
+}
+
+/* ===== TABLE ENHANCEMENTS ===== */
+
+[data-admin-theme="light"] table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+[data-admin-theme="light"] thead th {
+  background: #F8FAFC;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  color: #64748B;
+  padding: 12px 16px;
+  border-bottom: 2px solid #E7E9EC;
+}
+
+[data-admin-theme="light"] tbody tr {
+  transition: background-color 180ms ease;
+}
+
+[data-admin-theme="light"] tbody tr:hover {
+  background-color: #F8FAFC;
+}
+
+[data-admin-theme="light"] tbody td {
+  padding: 16px;
+  border-bottom: 1px solid #F0F2F4;
+  color: #0F172A;
+}
+
+/* ===== BADGE COMPONENTS ===== */
+
+[data-admin-theme="light"] .badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+}
+
+[data-admin-theme="light"] .badge-purple {
+  background: rgba(99, 102, 241, 0.10);
+  color: #4F46E5;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+[data-admin-theme="light"] .badge-success {
+  background: rgba(22, 163, 74, 0.10);
+  color: #16A34A;
+  border: 1px solid rgba(22, 163, 74, 0.15);
+}
+
+[data-admin-theme="light"] .badge-warning {
+  background: rgba(217, 119, 6, 0.10);
+  color: #D97706;
+  border: 1px solid rgba(217, 119, 6, 0.15);
+}
+
+[data-admin-theme="light"] .badge-danger {
+  background: rgba(220, 38, 38, 0.10);
+  color: #DC2626;
+  border: 1px solid rgba(220, 38, 38, 0.15);
+}

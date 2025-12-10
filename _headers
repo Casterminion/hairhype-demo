@@ -1,0 +1,104 @@
+# Default headers for all pages
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Content-Security-Policy: default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://*.supabase.co https://tile.openstreetmap.org https://www.instagram.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.supabase.co https://hook.eu1.make.com; frame-src 'self' https://www.instagram.com;
+
+# Cache HTML with revalidation
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Cache CSS files aggressively
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache JavaScript files aggressively
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache images aggressively
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.gif
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache fonts with CORS
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# Cache videos
+/*.mp4
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webm
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache JSON files
+/*.json
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Favicon files with correct MIME types
+/favicon.ico
+  Content-Type: image/x-icon
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon.svg
+  Content-Type: image/svg+xml
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon-96x96.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=31536000, immutable
+
+/apple-touch-icon.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=31536000, immutable
+
+/web-app-manifest-192x192.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=31536000, immutable
+
+/web-app-manifest-512x512.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=31536000, immutable
+
+# Web App Manifest with correct MIME type
+/site.webmanifest
+  Content-Type: application/manifest+json
+  Cache-Control: public, max-age=31536000, immutable
+
+# Service worker - always fresh
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Root path
+/
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin

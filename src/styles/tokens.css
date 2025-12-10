@@ -1,0 +1,130 @@
+:root {
+  /* Colors - Purple Luxury Theme */
+  --ink: #0D1117;
+  --ink-2: #1A0B2E;
+  --navy: #0E1A2B;
+  --surface: #FAF5FF;
+  --surface-2: #F3E8FF;
+  --card: #FBFAF7;
+  --line: rgba(147, 51, 234, 0.12);
+  --muted: #8B5CF6;
+  --gold: #9333EA;
+  --gold-2: #7E22CE;
+  --purple-primary: #9333EA;
+  --purple-accent: #A855F7;
+  --success: #0EA5E9;
+  --danger: #B91C1C;
+
+  /* Admin Theme - Default (Dark) */
+  --admin-bg: #0D1117;
+  --admin-bg-2: #161B22;
+  --admin-card: #0D1117;
+  --admin-card-navy: #0E1A2B;
+  --admin-card-dark: #1C2128;
+  --admin-text: #FFFFFF;
+  --admin-text-secondary: rgba(255, 255, 255, 0.7);
+  --admin-text-muted: rgba(255, 255, 255, 0.5);
+  --admin-text-subtle: rgba(255, 255, 255, 0.4);
+  --admin-border: rgba(255, 255, 255, 0.06);
+  --admin-border-strong: rgba(255, 255, 255, 0.1);
+  --admin-divider: rgba(255, 255, 255, 0.05);
+  --admin-hover: rgba(255, 255, 255, 0.02);
+  --admin-active: rgba(255, 255, 255, 0.04);
+  --admin-input-bg: rgba(255, 255, 255, 0.05);
+  --admin-input-border: rgba(255, 255, 255, 0.1);
+  --admin-input-placeholder: rgba(255, 255, 255, 0.4);
+  --admin-skeleton: rgba(255, 255, 255, 0.05);
+  --admin-skeleton-pulse: rgba(255, 255, 255, 0.1);
+
+  /* Service Colors */
+  --service-haircut: #97A6BA;
+  --service-longhair: #9FB2A1;
+  --service-beard: #B8A28E;
+  --service-combo: #A49AB4;
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  /* Shadows */
+  --shadow-low: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-med: 0 6px 24px rgba(0, 0, 0, 0.14);
+  --shadow-high: 0 28px 64px rgba(0, 0, 0, 0.22);
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Motion */
+  --ease-default: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration-fast: 180ms;
+  --duration-normal: 220ms;
+  --duration-spring: 240ms;
+}
+
+/* Admin Light Theme - Ultra Premium Modern Design */
+[data-admin-theme="light"] {
+  --admin-bg: #FAFBFC; /* Sophisticated neutral base */
+  --admin-bg-2: #FFFFFF; /* Pure white */
+  --admin-card: #FFFFFF;
+  --admin-card-navy: #FFFFFF;
+  --admin-card-dark: #F8FAFC;
+  --admin-text: #0F172A; /* Slate 900 - Premium dark */
+  --admin-text-secondary: #475569; /* Slate 600 */
+  --admin-text-muted: #94A3B8; /* Slate 400 */
+  --admin-text-subtle: #CBD5E1; /* Slate 300 */
+  --admin-border: #E7E9EC; /* Clean refined borders */
+  --admin-border-strong: #D6D9DD;
+  --admin-divider: #F0F2F4;
+  --admin-hover: #F8FAFC;
+  --admin-active: #F1F5F9;
+  --admin-input-bg: #FFFFFF;
+  --admin-input-border: #E7E9EC;
+  --admin-input-placeholder: #94A3B8;
+  --admin-skeleton: #F1F5F9;
+  --admin-skeleton-pulse: #E7E9EC;
+  --admin-purple: #6366F1; /* Primary accent */
+  --admin-purple-hover: #4F46E5;
+  --admin-purple-active: #4338CA;
+}
+
+html,
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1200px 800px at 10% -10%, rgba(255, 255, 255, 0.06), transparent), var(--ink);
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.serif {
+  font-family: "Cormorant Garamond", "Fraunces", Georgia, serif;
+  letter-spacing: 0.2px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus-visible {
+  outline: 2px solid rgba(147, 51, 234, 0.6);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(147, 51, 234, 0.6);
+  outline-offset: 2px;
+}

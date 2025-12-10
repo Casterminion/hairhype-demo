@@ -1,0 +1,7 @@
+This project is the website for Hair Hype Junior, a modern barbershop in Kaunas, Lithuania.
+
+Always design pages to be beautiful, minimal, mobile-first and production-ready. Use Next.js App Router, TypeScript, Tailwind CSS, shadcn/ui and lucide-react for icons. Do not add other UI or icon libraries unless I explicitly ask.
+
+Whenever you create or edit pages, keep SEO for the Lithuanian market in mind. Use clear titles and meta descriptions in Lithuanian, and naturally include keywords like "barbershop Kaune", "barberis Kaune", and "kirpėjas Kaune" where relevant.
+
+Do not make large refactors unless I request them. Prefer small, focused changes, and list all modified files in your response.

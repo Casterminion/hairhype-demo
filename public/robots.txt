@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Allow all favicon and manifest files
+Allow: /favicon.ico
+Allow: /favicon.svg
+Allow: /favicon-96x96.png
+Allow: /apple-touch-icon.png
+Allow: /site.webmanifest
+Allow: /web-app-manifest-192x192.png
+Allow: /web-app-manifest-512x512.png
+
+# Allow common assets
+Allow: /assets/
+
+# Disallow admin areas
+Disallow: /admin
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://hairhypejunior.lt/sitemap.xml
