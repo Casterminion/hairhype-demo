@@ -103,31 +103,8 @@ export default function ReservationModal({ isOpen, onClose }: ReservationModalPr
       setBookingResult(result);
       setStep('confirm');
 
-      try {
-        const webhookUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-booking-to-make`;
-        const webhookResponse = await fetch(webhookUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-          },
-          body: JSON.stringify({
-            bookingId: result.bookingId,
-            service: result.service,
-            customerName: result.customerName,
-            customerPhone: result.customerPhone,
-            startTime: result.startTime,
-            endTime: result.endTime
-          })
-        });
-
-        if (!webhookResponse.ok) {
-          const errorData = await webhookResponse.json();
-          console.error('Webhook failed:', errorData);
-        }
-      } catch (webhookError) {
-        console.error('Failed to send notification:', webhookError);
-      }
+      // DEMO MODE: Webhook disabled - no Supabase connection
+      console.log('[DEMO] Booking created locally, webhook notification disabled');
 
     } catch (err: any) {
       setError(err.message || 'Įvyko klaida. Bandyk dar kartą.');
