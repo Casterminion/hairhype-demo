@@ -3,7 +3,7 @@
  * This file provides a mock Supabase client that uses localStorage instead of a real database.
  * All connections to the actual Supabase service have been removed for privacy.
  *
- * Hardcoded admin credentials: admin / admin
+ * Hardcoded admin credentials: admin@admin / admin
  */
 
 // Mock data for the demo
@@ -98,14 +98,24 @@ const MOCK_REVIEWS = [
   }
 ];
 
+// Blog posts with copyright-free Unsplash images
 const MOCK_POSTS = [
   {
     id: '1',
     title: 'Kaip prižiūrėti barzdą namie',
     slug: 'kaip-priziureti-barzda-namie',
     excerpt: 'Patarimai, kaip tinkamai prižiūrėti barzdą tarp vizitų pas kirpėją.',
-    content: '<p>Barzdos priežiūra yra svarbi kasdienė rutina...</p>',
-    featured_image: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800',
+    content: `<h2>Barzdos priežiūra namuose</h2>
+<p>Barzdos priežiūra yra svarbi kasdienė rutina, kuri padeda išlaikyti sveiką ir tvarkingą barzdą.</p>
+<h3>Pagrindiniai patarimai:</h3>
+<ul>
+<li>Plaukite barzdą 2-3 kartus per savaitę specialiu šampūnu</li>
+<li>Naudokite barzdos aliejų kasdien</li>
+<li>Šukuokite barzdą kiekvieną rytą</li>
+<li>Reguliariai apkarpykite netvarkingus plaukelius</li>
+</ul>
+<p>Laikydamiesi šių paprastų taisyklių, jūsų barzda visada atrodys puikiai!</p>`,
+    featured_image: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80',
     category: 'Patarimai',
     tags: ['barzda', 'priežiūra', 'patarimai'],
     is_published: true,
@@ -118,9 +128,18 @@ const MOCK_POSTS = [
     id: '2',
     title: '2024 metų vyriškų kirpimų tendencijos',
     slug: '2024-metu-vyrisku-kirpimu-tendencijos',
-    excerpt: 'Populiariausios šukuosenos šiais metais.',
-    content: '<p>Šiais metais populiariausios vyriškos šukuosenos...</p>',
-    featured_image: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800',
+    excerpt: 'Populiariausios šukuosenos šiais metais - nuo klasikinių iki modernių stilių.',
+    content: `<h2>Šių metų tendencijos</h2>
+<p>2024 metai atnešė daug įdomių vyriškų šukuosenų tendencijų.</p>
+<h3>Populiariausi stiliai:</h3>
+<ul>
+<li><strong>Fade kirpimas</strong> - klasika, kuri niekada neišeina iš mados</li>
+<li><strong>Tekstūruotas crop</strong> - modernaus vyro pasirinkimas</li>
+<li><strong>Pompadour</strong> - elegantiškas ir stilingas</li>
+<li><strong>Undercut</strong> - drąsus ir išraiškingas</li>
+</ul>
+<p>Rinkitės stilių, kuris geriausiai atitinka jūsų gyvenimo būdą!</p>`,
+    featured_image: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80',
     category: 'Tendencijos',
     tags: ['tendencijos', 'mada', 'kirpimas'],
     is_published: true,
@@ -133,9 +152,18 @@ const MOCK_POSTS = [
     id: '3',
     title: 'Kaip išsirinkti tinkamą šukuoseną',
     slug: 'kaip-issirinkti-tinkama-sukuosena',
-    excerpt: 'Vadovas, kaip išsirinkti šukuoseną pagal veido formą.',
-    content: '<p>Tinkamos šukuosenos pasirinkimas priklauso nuo daugelio faktorių...</p>',
-    featured_image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800',
+    excerpt: 'Vadovas, kaip išsirinkti šukuoseną pagal veido formą ir gyvenimo būdą.',
+    content: `<h2>Šukuosenos pasirinkimas</h2>
+<p>Tinkamos šukuosenos pasirinkimas priklauso nuo daugelio faktorių.</p>
+<h3>Ką reikia įvertinti:</h3>
+<ul>
+<li><strong>Veido forma</strong> - ovali, apvali, kvadratinė ar pailga</li>
+<li><strong>Plaukų tipas</strong> - tiesi, banguoti ar garbanoti</li>
+<li><strong>Gyvenimo būdas</strong> - kiek laiko skiriate plaukų priežiūrai</li>
+<li><strong>Profesija</strong> - formalus ar laisvas stilius</li>
+</ul>
+<p>Konsultuokitės su savo kirpėju - jis padės rasti geriausią variantą!</p>`,
+    featured_image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80',
     category: 'Patarimai',
     tags: ['patarimai', 'šukuosena', 'veido forma'],
     is_published: true,
@@ -143,30 +171,89 @@ const MOCK_POSTS = [
     author: 'Hair Hype Junior',
     created_at: '2024-11-10T09:00:00Z',
     updated_at: '2024-11-10T09:00:00Z'
+  },
+  {
+    id: '4',
+    title: 'Plaukų priežiūros pagrindai vyrams',
+    slug: 'plauku-prieziuros-pagrindai-vyrams',
+    excerpt: 'Svarbiausi patarimai, kaip tinkamai prižiūrėti plaukus kasdien.',
+    content: `<h2>Plaukų priežiūra</h2>
+<p>Sveiki ir gražūs plaukai prasideda nuo tinkamos priežiūros.</p>
+<h3>Kasdienė rutina:</h3>
+<ul>
+<li>Plaukite plaukus 2-3 kartus per savaitę</li>
+<li>Naudokite kondicionierių po plovimo</li>
+<li>Venkite per karšto vandens</li>
+<li>Reguliariai lankykitės pas kirpėją</li>
+</ul>`,
+    featured_image: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80',
+    category: 'Patarimai',
+    tags: ['plaukai', 'priežiūra', 'patarimai'],
+    is_published: true,
+    featured: false,
+    author: 'Hair Hype Junior',
+    created_at: '2024-11-05T11:00:00Z',
+    updated_at: '2024-11-05T11:00:00Z'
   }
 ];
 
+// Gallery images with copyright-free Unsplash barber/haircut images
 const MOCK_GALLERY_IMAGES = [
   {
     id: '1',
-    image_url: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600',
-    alt_text: 'Vyriškas kirpimas',
+    image_url: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=80',
+    alt_text: 'Profesionalus barzdos tvarkymas',
     sort_order: 1,
     created_at: '2024-11-01T10:00:00Z'
   },
   {
     id: '2',
-    image_url: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600',
-    alt_text: 'Barzdos tvarkymas',
+    image_url: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80',
+    alt_text: 'Modernaus stiliaus kirpimas',
     sort_order: 2,
     created_at: '2024-11-02T10:00:00Z'
   },
   {
     id: '3',
-    image_url: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600',
-    alt_text: 'Šukuosenos stilizavimas',
+    image_url: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80',
+    alt_text: 'Klasikinis vyriškas kirpimas',
     sort_order: 3,
     created_at: '2024-11-03T10:00:00Z'
+  },
+  {
+    id: '4',
+    image_url: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80',
+    alt_text: 'Fade kirpimo technika',
+    sort_order: 4,
+    created_at: '2024-11-04T10:00:00Z'
+  },
+  {
+    id: '5',
+    image_url: 'https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=600&q=80',
+    alt_text: 'Barber shop aplinka',
+    sort_order: 5,
+    created_at: '2024-11-05T10:00:00Z'
+  },
+  {
+    id: '6',
+    image_url: 'https://images.unsplash.com/photo-1634302086887-13b5281d6f51?auto=format&fit=crop&w=600&q=80',
+    alt_text: 'Plaukų stilizavimas',
+    sort_order: 6,
+    created_at: '2024-11-06T10:00:00Z'
+  },
+  {
+    id: '7',
+    image_url: 'https://images.unsplash.com/photo-1596728325488-58c87691e9af?auto=format&fit=crop&w=600&q=80',
+    alt_text: 'Barzdos formavimas',
+    sort_order: 7,
+    created_at: '2024-11-07T10:00:00Z'
+  },
+  {
+    id: '8',
+    image_url: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&q=80',
+    alt_text: 'Profesionali kirpykla',
+    sort_order: 8,
+    created_at: '2024-11-08T10:00:00Z'
   }
 ];
 
@@ -464,10 +551,10 @@ class MockQueryBuilder {
   }
 }
 
-// Admin credentials: admin / admin
+// Admin credentials: admin@admin / admin
 const ADMIN_USER = {
   id: 'demo-admin-id',
-  email: 'admin',
+  email: 'admin@admin',
   full_name: 'Demo Admin'
 };
 
@@ -476,8 +563,8 @@ const DEMO_SESSION_TOKEN = 'demo-session-token-12345';
 // Mock RPC functions
 const rpcFunctions: Record<string, (params: any) => any> = {
   admin_login: (params: { p_email: string; p_password: string }) => {
-    // Hardcoded credentials: admin / admin
-    if (params.p_email === 'admin' && params.p_password === 'admin') {
+    // Hardcoded credentials: admin@admin / admin
+    if (params.p_email === 'admin@admin' && params.p_password === 'admin') {
       return {
         token: DEMO_SESSION_TOKEN,
         user_id: ADMIN_USER.id,
@@ -613,6 +700,6 @@ const supabase = {
 };
 
 console.log('🎭 DEMO MODE: Using mock Supabase client with localStorage');
-console.log('📝 Admin credentials: admin / admin');
+console.log('📝 Admin credentials: admin@admin / admin');
 
 export { supabase };
