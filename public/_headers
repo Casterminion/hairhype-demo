@@ -39,7 +39,6 @@
 # Root index.html
 /
   Cache-Control: public, max-age=0, must-revalidate
-  X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
@@ -56,11 +55,11 @@
 
 # Enable Compression and Security headers for all pages
 /*
-  X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
   # Supabase and webhooks removed for demo/case study version
-  Content-Security-Policy: default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://tile.openstreetmap.org https://www.instagram.com https://images.unsplash.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self'; frame-src 'self' https://www.instagram.com;
+  # frame-ancestors * allows embedding in iframes
+  Content-Security-Policy: default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://tile.openstreetmap.org https://www.instagram.com https://images.unsplash.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self'; frame-src 'self' https://www.instagram.com; frame-ancestors *;
   Content-Encoding: br, gzip
   Vary: Accept-Encoding
